@@ -5,8 +5,6 @@ If you are a data analyst, an analytics engineer or a data engineer using dbt yo
 
 This extension aims to fix all the flaws in your workflow. Thanks to dbt-helper you'll be able to directly template your SQL queries from your browser while copy/pasting the data.
 
-https://user-images.githubusercontent.com/2658211/182904444-f8689038-5579-410a-a47d-7387b60830de.mov
-
 ## Examples
 
 If you have a query like
