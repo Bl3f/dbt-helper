@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="sidebar.css"/>
+</head>
+
+<body>
+<header>
+    <div>Your dbt companion</div>
+</header>
+<div class="content">
+    <div class="help">
+        From this sidebar you can get help to empower your analyst work from your dbt informations.
+
+        Provide either your dbt <i>manifest.json</i> either access to your dbt git project.
+    </div>
+    <div class="bloc">
+        <h4>1. Pick your manifest</h4>
+        <input id="uploadFile" type="file" class="visually-hidden">
+        <label for="uploadFile" class="btn">Upload your manifest</label>
+    </div>
+    <div id="step-2">
+        <h4>2. dbt informations</h4>
+        <div>
+            You have:
+            <ul>
+                <li><span id="nb-sources"></span> sources</li>
+                <li><span id="nb-nodes"></span> models</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="sidebar.js"></script>
+</body>
+
+</html>

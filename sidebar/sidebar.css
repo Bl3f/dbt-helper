@@ -1,0 +1,70 @@
+html, body {
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    background-color: #EDEDF5;
+    font-family: "Helvetica Neue";
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: white;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 4px 2px -2px #CCC;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Separate rule for compatibility, :focus-within is required on modern Firefox and Chrome */
+input.visually-hidden:focus + label {
+  outline: thin dotted;
+}
+input.visually-hidden:focus-within + label {
+  outline: thin dotted;
+}
+
+
+.content {
+    margin-top: 40px;
+    padding: 10px 20px;
+}
+
+.help {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    background-color: #e5a655;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#step-2 {
+    display: none;
+    margin-top: 40px;
+}
+
+.source {
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: .8em;
+}

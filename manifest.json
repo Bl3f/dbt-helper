@@ -1,0 +1,37 @@
+{
+
+  "manifest_version": 2,
+  "name": "dbt-helper",
+  "version": "1.0",
+
+  "description": "A dbt-helper to empower your SQL workbenches.",
+
+  "icons": {
+    "48": "icons/dbt-helper-48.png",
+    "96": "icons/dbt-helper-96.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+
+  "sidebar_action": {
+    "default_title": "dbt-helper",
+    "default_panel": "sidebar/sidebar.html",
+    "default_icon": "icons/dbt-helper-32.png",
+    "browser_style": false
+  },
+
+
+  "content_scripts": [
+    {
+      "matches": ["*://console.cloud.google.com/bigquery*"],
+      "js": [
+        "content_scripts/utils.js",
+        "content_scripts/helper.js"
+      ]
+    }
+  ]
+
+}
