@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "dbt-helper",
-  "version": "1.0",
+  "version": "0.0.1",
 
   "description": "A dbt-helper to empower your SQL workbenches.",
 
