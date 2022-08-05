@@ -13,7 +13,7 @@ SELECT count(*)
 FROM gcs.posts
 ```
 
-With the extension installed, each time you will copy this text it'll be transformer as below
+With the extension installed, each time you will copy this text it'll be transformed as below
 ```sql
 SELECT count(*)
 FROM {{ source('gcs', 'posts') }}
