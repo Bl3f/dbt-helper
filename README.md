@@ -1,3 +1,5 @@
+[<img src="https://user-images.githubusercontent.com/2658211/183131703-7d866068-c832-4b10-aa63-66130af63ea7.png">](https://addons.mozilla.org/en-GB/firefox/addon/dbt-helper/)
+
 # dbt-helper
 This is the web extension that empowers all dbt users.
 
@@ -13,7 +15,7 @@ SELECT count(*)
 FROM gcs.posts
 ```
 
-With the extension installed, each time you will copy this text it'll be transformer as below
+With the extension installed, each time you will copy this text it'll be transformed as below
 ```sql
 SELECT count(*)
 FROM {{ source('gcs', 'posts') }}
