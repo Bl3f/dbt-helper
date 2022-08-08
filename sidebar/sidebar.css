@@ -48,23 +48,29 @@ input.visually-hidden:focus-within + label {
 }
 
 .btn {
-    width: 100%;
     text-align: center;
     background-color: #e5a655;
     border-radius: 4px;
     cursor: pointer;
     padding: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
-#step-2 {
+.hint {
+    font-size: .7em;
+    font-style: italic;
+}
+
+#step-2, #step-3 {
     display: none;
     margin-top: 40px;
 }
 
-.source {
+.card {
     background-color: white;
     border-radius: 4px;
     padding: 10px 20px;
-    margin-bottom: 10px;
     font-size: .8em;
+    display: inline-block;
 }

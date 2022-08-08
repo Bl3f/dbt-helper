@@ -20,16 +20,17 @@
         <h4>1. Pick your manifest</h4>
         <input id="uploadFile" type="file" class="visually-hidden">
         <label for="uploadFile" class="btn">Upload your manifest</label>
+        <div class="hint">This manifest has been uploaded on <span id="manifestUploadedAt"></span></div>
     </div>
     <div id="step-2">
         <h4>2. dbt informations</h4>
         <div>
-            You have:
-            <ul>
-                <li><span id="nb-sources"></span> sources</li>
-                <li><span id="nb-nodes"></span> models</li>
-            </ul>
+            <div class="card"><span id="nbSources"></span> sources</div>
+            <div class="card"><span id="nbNodes"></span> models</div>
         </div>
+    </div>
+    <div id="step-3">
+        <h4>3. Extension</h4>
     </div>
 </div>
 <script src="sidebar.js"></script>
