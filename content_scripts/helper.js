@@ -9,7 +9,6 @@ div.classList.add("dbtHelperDebugger");
 div.appendChild(h1);
 div.appendChild(debugContentDiv);
 
-
 function activateDebug() {
     document.body.appendChild(div);
 
