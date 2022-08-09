@@ -20,15 +20,20 @@ function findDbtObject(table, models) {
 
 function replaceSQL(text, models) {
     let replacedText = (' ' + text).slice(1);
+    console.log(replacedText);
 
     const output = replacedText.replace(tableRegExp, (match, p1, p2, offset, string, groups) => {
         const { table, prefix } = groups;
         const dbtObject = findDbtObject(table, models);
 
+        console.log("table", table, "prefix", prefix)
+
         if (dbtObject.resource_type === MODEL) {
             return `${prefix} {{ ref('${dbtObject.name}') }}`
         } else if(dbtObject.resource_type === SOURCE) {
             return `${prefix} {{ source('${dbtObject.schema}', '${dbtObject.name}') }}`
+        } else {
+            return match;
         }
     });
 

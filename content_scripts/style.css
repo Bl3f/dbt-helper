@@ -1,0 +1,19 @@
+.dbtHelperDebugger {
+    border-top: 2px solid black;
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    padding-bottom: 40px;
+    font-family: "Helvetica Neue";
+}
+
+.dbtHelperDebugger h1 {
+    margin-left: 20px;
+}
+
+.dbtHelperDebugger div {
+    background-color: #dcdcdc;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px 20px;
+}

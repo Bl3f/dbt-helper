@@ -1,5 +1,11 @@
 const MODEL = 'model', SOURCE = 'source';
 
+function sendMessage(type, value) {
+    browser.tabs.query({currentWindow: true}, function (tabs){
+        tabs.forEach(tab => browser.tabs.sendMessage(tab.id, {type, value}))
+    });
+}
+
 function displaydbtInfo(state, nbSources, nbNodes) {
     const {models, info} = state.state;
 
@@ -10,9 +16,7 @@ function displaydbtInfo(state, nbSources, nbNodes) {
     document.getElementById("nbSources").innerText = nbSources || Object.entries(models).filter(([key, model]) => model.resource_type === SOURCE).length;
     document.getElementById("nbNodes").innerText = nbNodes || Object.entries(models).filter(([key, model]) => model.resource_type === MODEL).length;
 
-    browser.tabs.query({currentWindow: true}, function (tabs){
-        tabs.forEach(tab => browser.tabs.sendMessage(tab.id, "hello"))
-    });
+    //sendMessage("hello");
 }
 
 function handleManifest(manifest) {
@@ -41,7 +45,24 @@ function handleFile(e) {
     reader.readAsText(file);
 }
 
+function handleEnable() {
+    const value = this.checked;
+    browser.storage.local.set({enable: value});
+}
+
+function handleDebug() {
+    const value = this.checked;
+    browser.storage.local.set({debug: value});
+}
+
 document.getElementById("uploadFile").addEventListener("change", handleFile, false);
-console.log("local storage", browser.storage.local.get("state").then(state => {
+document.getElementById("enable").addEventListener("change", handleEnable, false);
+document.getElementById("debug").addEventListener("change", handleDebug, false);
+
+browser.storage.local.get("state").then(state => {
     if (state && Object.keys(state).length) displaydbtInfo(state);
-}));
+});
+
+browser.storage.local.get("debug").then(debug => {
+    if (debug) document.getElementById("debug").checked = debug.debug;
+});

@@ -14,7 +14,7 @@
     <div class="help">
         From this sidebar you can get help to empower your analyst work from your dbt informations.
 
-        Provide either your dbt <i>manifest.json</i> either access to your dbt git project.
+        Provide your dbt <i>manifest.json</i>. Your manifest will only stay within your own browser and it is not transfered to any third party.
     </div>
     <div class="bloc">
         <h4>1. Pick your manifest</h4>
@@ -31,6 +31,10 @@
     </div>
     <div id="step-3">
         <h4>3. Extension</h4>
+        <div>
+            <div><input type="checkbox" id="enable" checked> <label for="enable">Watch copy/paste</label></div>
+            <div><input type="checkbox" id="debug"> <label for="debug">Live debug</label></div>
+        </div>
     </div>
 </div>
 <script src="sidebar.js"></script>
