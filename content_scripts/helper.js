@@ -1,4 +1,4 @@
-let models, isEnabled, isDebug;
+let models, isEnabled = true, isDebug = false;
 
 let div = document.createElement('div'),
     h1 = document.createElement("h1"),
@@ -10,6 +10,7 @@ div.appendChild(h1);
 div.appendChild(debugContentDiv);
 
 function activateDebug() {
+    console.log(models);
     document.body.appendChild(div);
 
     document.addEventListener("input", (event) => {
@@ -35,11 +36,11 @@ browser.storage.local.get("state").then(state => {
 });
 
 browser.storage.local.get("enable").then(state => {
-    isEnabled = state.enable;
+    isEnabled = state.enable === undefined ? isEnabled : state.enable;
 });
 
 browser.storage.local.get("debug").then(state => {
-    isDebug = state.debug;
+    isDebug = state.debug === undefined ? isDebug : state.debug;
 
     if (isDebug) activateDebug();
 });
@@ -57,6 +58,7 @@ browser.storage.onChanged.addListener((changes) => {
 })
 
 window.addEventListener('copy', (event) => {
+    console.log("debug", isEnabled, models)
     if (isEnabled) {
         const selectionText = event.clipboardData.getData('text/plain') || event.target.value;
         event.clipboardData.setData('text/plain', replaceSQL(selectionText, models));

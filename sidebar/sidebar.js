@@ -55,9 +55,16 @@ function handleDebug() {
     browser.storage.local.set({debug: value});
 }
 
+function deleteManifest() {
+    browser.storage.local.set({state: null});
+    browser.storage.local.set({enable: true});
+    browser.storage.local.set({debug: false});
+}
+
 document.getElementById("uploadFile").addEventListener("change", handleFile, false);
 document.getElementById("enable").addEventListener("change", handleEnable, false);
 document.getElementById("debug").addEventListener("change", handleDebug, false);
+document.getElementById("deleteManifest").addEventListener("click", deleteManifest, false);
 
 browser.storage.local.get("state").then(state => {
     if (state && Object.keys(state).length) displaydbtInfo(state);
